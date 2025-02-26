@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgetjotlv68li"]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_30omn"]
+[ext_resource type="FontFile" uid="uid://176a8vnfyoxm" path="res://Assets/PressStart2P-Regular.ttf" id="1_l4hvp"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_30omn")
+
+[node name="Placar" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.0
+offset_top = 10.0
+offset_right = 17.0
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_l4hvp")
+theme_override_font_sizes/font_size = 32
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mensagem" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.5
+offset_top = -11.5
+offset_right = 90.5
+offset_bottom = 48.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_l4hvp")
+theme_override_font_sizes/font_size = 32
+text = "Voce venceu!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 489.0
+offset_top = 430.0
+offset_right = 785.0
+offset_bottom = 480.0
+theme_override_fonts/font = ExtResource("1_l4hvp")
+theme_override_font_sizes/font_size = 32
+text = "Reiniciar"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

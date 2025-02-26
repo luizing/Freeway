@@ -1,0 +1,155 @@
+[gd_scene load_steps=18 format=3 uid="uid://dc8bp5737kusy"]
+
+[ext_resource type="Texture2D" uid="uid://cxjfobalsxfai" path="res://Assets/carros/coches (1).png" id="1_30xk0"]
+[ext_resource type="Script" path="res://scripts/carros.gd" id="1_s6ml1"]
+[ext_resource type="Texture2D" uid="uid://cmwg8etv11vog" path="res://Assets/carros/coches (2).png" id="2_q22yw"]
+[ext_resource type="Texture2D" uid="uid://bvixp1exgi3yt" path="res://Assets/carros/coches (3).png" id="3_lxgut"]
+[ext_resource type="Texture2D" uid="uid://g4aumwcmnaan" path="res://Assets/carros/coches (4).png" id="4_sh8r1"]
+[ext_resource type="Texture2D" uid="uid://l4lee1cx6x7r" path="res://Assets/carros/coches (5).png" id="5_sne0w"]
+[ext_resource type="Texture2D" uid="uid://chrrj0iuvqtgs" path="res://Assets/carros/coches (6).png" id="6_qycuh"]
+[ext_resource type="Texture2D" uid="uid://cb5ociyo06jgg" path="res://Assets/carros/coches (7).png" id="7_ksqab"]
+[ext_resource type="Texture2D" uid="uid://bi8g3je34qcon" path="res://Assets/carros/coches (8).png" id="8_b51gv"]
+[ext_resource type="Texture2D" uid="uid://dtqdgvd5ujwyc" path="res://Assets/carros/coches (9).png" id="9_38v28"]
+[ext_resource type="Texture2D" uid="uid://mohvpvxcggow" path="res://Assets/carros/coches (10).png" id="10_p5pe2"]
+[ext_resource type="Texture2D" uid="uid://dkpv7seb24lra" path="res://Assets/carros/coches (11).png" id="11_k2ywj"]
+[ext_resource type="Texture2D" uid="uid://blnqu60g7kjjn" path="res://Assets/carros/coches (12).png" id="12_payor"]
+[ext_resource type="Texture2D" uid="uid://cuflub6nnguv3" path="res://Assets/carros/coches (13).png" id="13_y8a3s"]
+[ext_resource type="Texture2D" uid="uid://chl8lhc7ds5ey" path="res://Assets/carros/coches (14).png" id="14_080vo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uv7j7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_30xk0")
+}],
+"loop": true,
+"name": &"Carro01",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_q22yw")
+}],
+"loop": true,
+"name": &"Carro02",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_lxgut")
+}],
+"loop": true,
+"name": &"Carro03",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_sh8r1")
+}],
+"loop": true,
+"name": &"Carro04",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_sne0w")
+}],
+"loop": true,
+"name": &"Carro05",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_qycuh")
+}],
+"loop": true,
+"name": &"Carro06",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ksqab")
+}],
+"loop": true,
+"name": &"Carro07",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_b51gv")
+}],
+"loop": true,
+"name": &"Carro08",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_38v28")
+}],
+"loop": true,
+"name": &"Carro09",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_p5pe2")
+}],
+"loop": true,
+"name": &"Carro10",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_k2ywj")
+}],
+"loop": true,
+"name": &"Carro11",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_payor")
+}],
+"loop": true,
+"name": &"Carro12",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_y8a3s")
+}],
+"loop": true,
+"name": &"Carro13",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_080vo")
+}],
+"loop": true,
+"name": &"Carro14",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orvxi"]
+size = Vector2(46, 31)
+
+[node name="Carros" type="RigidBody2D"]
+collision_layer = 4
+gravity_scale = 0.0
+script = ExtResource("1_s6ml1")
+
+[node name="Animacao" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_uv7j7")
+animation = &"Carro14"
+
+[node name="Colisao" type="CollisionShape2D" parent="."]
+position = Vector2(1, -0.5)
+shape = SubResource("RectangleShape2D_orvxi")
+
+[node name="Noticador" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-24, -17, 48, 34)
+
+[connection signal="screen_exited" from="Noticador" to="." method="_on_noticador_screen_exited"]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://r6nksijrhno5"]
+
+[ext_resource type="Texture2D" uid="uid://bakksta62ntcu" path="res://Assets/ganha.png" id="1_grntm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j3w3u"]
+size = Vector2(1278, 24)
+
+[node name="LinhaChegada" type="StaticBody2D"]
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_grntm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 2)
+shape = SubResource("RectangleShape2D_j3w3u")

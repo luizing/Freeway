@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdx4401b1mqvg"]
+[gd_scene load_steps=10 format=3 uid="uid://bdx4401b1mqvg"]
 
 [ext_resource type="PackedScene" uid="uid://cok1b0bpa6qkf" path="res://Cenas/player.tscn" id="1_0y4mq"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_qjgd8"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cgetjotlv68li" path="res://Cenas/hud.tscn" id="4_6k5k2"]
 [ext_resource type="AudioStream" uid="uid://2qp884dwn5io" path="res://Assets/sons/ponto.wav" id="5_lsgcb"]
 [ext_resource type="AudioStream" uid="uid://doqpwtq2y2sj" path="res://Assets/sons/ganhou.wav" id="6_pk85o"]
+[ext_resource type="FontFile" uid="uid://176a8vnfyoxm" path="res://Assets/PressStart2P-Regular.ttf" id="9_5mbdw"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_qjgd8")
@@ -53,6 +54,23 @@ text = "Timer: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="LabelPlacar" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.0
+offset_top = 10.0
+offset_right = 17.0
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("9_5mbdw")
+theme_override_font_sizes/font_size = 32
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="morre" from="Player" to="." method="_on_player_morre"]
 [connection signal="pontua" from="Player" to="." method="_on_player_pontua"]
 [connection signal="timeout" from="TimerCarrosRapidos" to="." method="_on_timer_carros_rapidos_timeout"]
 [connection signal="timeout" from="TimerCarrosLentos" to="." method="_on_timer_carros_lentos_timeout"]

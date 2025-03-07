@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://r6nksijrhno5" path="res://Cenas/linha_chegada.tscn" id="2_abdla"]
 [ext_resource type="PackedScene" uid="uid://cgetjotlv68li" path="res://Cenas/hud.tscn" id="4_6k5k2"]
 [ext_resource type="AudioStream" uid="uid://c563bc4rkh5at" path="res://Assets/sons/tema.ogg" id="5_fjtl2"]
-[ext_resource type="AudioStream" uid="uid://2qp884dwn5io" path="res://Assets/sons/ponto.wav" id="5_lsgcb"]
-[ext_resource type="AudioStream" uid="uid://doqpwtq2y2sj" path="res://Assets/sons/ganhou.wav" id="6_pk85o"]
+[ext_resource type="AudioStream" uid="uid://boqtu3w5u77eu" path="res://Assets/sons/piano.wav" id="6_uc0jv"]
+[ext_resource type="AudioStream" uid="uid://bxpiu78qmdjdb" path="res://Assets/sons/orchestra.wav" id="7_lju7k"]
 [ext_resource type="FontFile" uid="uid://176a8vnfyoxm" path="res://Assets/PressStart2P-Regular.ttf" id="9_5mbdw"]
 
 [node name="Main" type="Node"]
@@ -38,10 +38,10 @@ stream = ExtResource("5_fjtl2")
 autoplay = true
 
 [node name="AudioPonto" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_lsgcb")
+stream = ExtResource("6_uc0jv")
 
 [node name="AudioVitoria" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_pk85o")
+stream = ExtResource("7_lju7k")
 
 [node name="HUD" parent="." instance=ExtResource("4_6k5k2")]
 
@@ -49,8 +49,10 @@ stream = ExtResource("6_pk85o")
 autostart = true
 
 [node name="LabelTimer" type="Label" parent="."]
-offset_right = 118.0
-offset_bottom = 45.0
+offset_right = 612.0
+offset_bottom = 53.0
+theme_override_fonts/font = ExtResource("9_5mbdw")
+theme_override_font_sizes/font_size = 16
 text = "Timer: 0"
 horizontal_alignment = 1
 vertical_alignment = 1

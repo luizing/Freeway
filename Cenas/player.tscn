@@ -53,10 +53,12 @@ shape = SubResource("CircleShape2D_nr50i")
 [node name="Animacao" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_2r2rn")
-animation = &"cima"
+animation = &"baixo"
 
 [node name="AudioMorte" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, -1)
 stream = ExtResource("8_1o1vs")
+volume_db = -14.082
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="morre" from="." to="." method="_on_morre"]

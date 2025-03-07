@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://2qp884dwn5io"
-path="res://.godot/imported/ponto.wav-ec75916977b15efc0c888d2f964d3ecf.sample"
+uid="uid://cy6gvtyrvjdmx"
+path="res://.godot/imported/snare.wav-9d49eac0d983e0ab8a3b626fbaec38bb.sample"
 
 [deps]
 
-source_file="res://Assets/sons/ponto.wav"
-dest_files=["res://.godot/imported/ponto.wav-ec75916977b15efc0c888d2f964d3ecf.sample"]
+source_file="res://Assets/sons/snare.wav"
+dest_files=["res://.godot/imported/snare.wav-9d49eac0d983e0ab8a3b626fbaec38bb.sample"]
 
 [params]
 

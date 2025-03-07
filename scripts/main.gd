@@ -26,8 +26,6 @@ func reset() -> void:
 	$HUD/Button.hide()
 	$LabelPlacar.text = str(score)
 	
-	$AudioTema.play()
-	
 	$Player.reset()
 	
 	$TimerGameOver.start()
@@ -90,7 +88,8 @@ func _on_player_pontua() -> void:
 		$AudioTema.stop()
 		$Player.speed = 0
 		
-func _on_hud_reinicia() -> void:
+func _on_hud_reinicia() -> void:	
+	$AudioTema.play()
 	reset()
 
 func _on_timer_game_over_timeout():

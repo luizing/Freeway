@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_qjgd8"]
 [ext_resource type="Texture2D" uid="uid://bdf00lnpud31p" path="res://Assets/wallpaperfreeway.png" id="1_wdasw"]
 [ext_resource type="PackedScene" uid="uid://r6nksijrhno5" path="res://Cenas/linha_chegada.tscn" id="2_abdla"]
-[ext_resource type="AudioStream" uid="uid://cc5761c3627bf" path="res://Assets/sons/tema.wav" id="4_1ri28"]
 [ext_resource type="PackedScene" uid="uid://cgetjotlv68li" path="res://Cenas/hud.tscn" id="4_6k5k2"]
+[ext_resource type="AudioStream" uid="uid://c563bc4rkh5at" path="res://Assets/sons/tema.ogg" id="5_fjtl2"]
 [ext_resource type="AudioStream" uid="uid://2qp884dwn5io" path="res://Assets/sons/ponto.wav" id="5_lsgcb"]
 [ext_resource type="AudioStream" uid="uid://doqpwtq2y2sj" path="res://Assets/sons/ganhou.wav" id="6_pk85o"]
 [ext_resource type="FontFile" uid="uid://176a8vnfyoxm" path="res://Assets/PressStart2P-Regular.ttf" id="9_5mbdw"]
@@ -34,7 +34,7 @@ wait_time = 0.5
 autostart = true
 
 [node name="AudioTema" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_1ri28")
+stream = ExtResource("5_fjtl2")
 autoplay = true
 
 [node name="AudioPonto" type="AudioStreamPlayer2D" parent="."]
@@ -75,5 +75,6 @@ vertical_alignment = 1
 [connection signal="pontua" from="Player" to="." method="_on_player_pontua"]
 [connection signal="timeout" from="TimerCarrosRapidos" to="." method="_on_timer_carros_rapidos_timeout"]
 [connection signal="timeout" from="TimerCarrosLentos" to="." method="_on_timer_carros_lentos_timeout"]
+[connection signal="finished" from="AudioTema" to="." method="_on_audio_tema_finished"]
 [connection signal="reinicia" from="HUD" to="." method="_on_hud_reinicia"]
 [connection signal="timeout" from="TimerGameOver" to="." method="_on_timer_game_over_timeout"]

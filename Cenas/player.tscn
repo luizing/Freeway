@@ -26,7 +26,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"baixo",
-"speed": 8.0
+"speed": 40.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -40,7 +40,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"cima",
-"speed": 8.0
+"speed": 40.0
 }]
 
 [node name="Player" type="Area2D"]
@@ -53,7 +53,7 @@ shape = SubResource("CircleShape2D_nr50i")
 [node name="Animacao" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_2r2rn")
-animation = &"baixo"
+animation = &"cima"
 
 [node name="AudioMorte" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_1o1vs")
